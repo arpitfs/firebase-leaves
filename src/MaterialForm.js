@@ -1,4 +1,4 @@
-import { Button, TextField, Input } from "@material-ui/core";
+import { Button, TextField, Input, InputLabel, NativeSelect  } from "@material-ui/core";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { makeStyles } from "@material-ui/core/styles";
@@ -110,6 +110,17 @@ function MaterialForm() {
                 autoComplete="off"
                 noValidate
             >
+                <InputLabel htmlFor="name-native-disabled">Name</InputLabel>
+                <NativeSelect
+                value="Name"
+                inputProps={{
+                    name: 'name',
+                    id: 'name-native-disabled',
+                }}
+                >
+                <option value="">Select Name</option>
+                <option value="olivier">Arpit Malik</option>
+                </NativeSelect>
                 <TextField
                     label="Vacation From"
                     type="date"
