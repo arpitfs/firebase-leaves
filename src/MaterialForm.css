@@ -1,0 +1,22 @@
+.materialForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    color: #00896b;
+    font-weight: 600;
+  }
+  
+  p {
+    color: red;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  p::before {
+    display: inline;
+  }
