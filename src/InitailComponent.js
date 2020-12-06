@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import View from './View'
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,17 +36,22 @@ function InitialComponent() {
     return (
         <div>
             <AppBar position="static">
-                <Toolbar style={{align:"right"}}>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                <Toolbar style={{ align: "right" }}>
+                    {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
-                    </IconButton>
-                    <Link to="/" style={{ color: "white", textDecoration: "none" }}>
-                        <Typography variant="h6" className={classes.title}>
+                    </IconButton> */}
+                    {/* <Link to="/" style={{ color: "white", textDecoration: "none" }}> */}
+                    {/* <Typography variant="h6" onClick={{}} className={classes.title}>
                             Vacation Tracking
-                    </Typography>
-                    </Link>
-                    <Link style={{ color: "white", textDecoration: "none" }} to="/ApplyLeave">Apply Leave</Link>
-                    <Link style={{ color: "white", textDecoration: "none" }} to="/View">View Leaves</Link>
+                    </Typography> */}
+                    <div>
+                        <Link style={{ color: "white", textDecoration: "none", fontSize:"20px" }} to="/">Vacation Tracking</Link>
+                    </div>
+                    {/* </Link> */}
+                    <div style={{float:"right", marginLeft:"1150px"}}>
+                        <Link style={{ color: "white", textDecoration: "none", marginRight: "10px" }} to="/ApplyLeave">Apply Leave</Link>
+                        <Link style={{ color: "white", textDecoration: "none" }} to="/View">View Leaves</Link>
+                    </div>
                 </Toolbar>
             </AppBar>
             <div style={{

@@ -12,13 +12,13 @@ function Home() {
                 flexDirection: "column"
             }}>
             <div style={{ marginLeft: "0px" }}>
-                <Members name="Arpit Malik" status={true} />
-                <Members name="Amol Sakalkale" status={1} />
-                <Members name="Sumeet Verma" status={0} />
-                <Members name="Mandar Joshi" status={0} />
-                <Members name="Anees Mohammed" status={0} />
-                <Members name="Uday Patil" status={0} />
-                <Members name="Vikram" status={0} />
+                <Members name="Member 1" position="Software Engineer" />
+                <Members name="Member 1" position="Software Engineer"/>
+                <Members name="Member 1" position="Software Engineer" />
+                <Members name="Member 1" position="Software Engineer" />
+                <Members name="Member 1" position="Software Engineer" />
+                <Members name="Member 5" position="Software Engineer" />
+                <Members name="Member 6" position="Software Engineer" />
             </div>
         </div>
     );

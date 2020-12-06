@@ -1,14 +1,14 @@
 import { ListItemText, Button, ListItem } from '@material-ui/core'
 
 const members = (props) => {
-    const value = props.status ? "On Holiday 🙂" : "Working 😐"
     return (
         <div style={{ display: "flex" }}>
             <div>
                 <ListItem>
-                    <ListItemText primary={props.name} secondary={value} />
+                    <ListItemText primary={props.name} secondary={props.position} />
                 </ListItem>
             </div>
+            <div>
             <div style={{
                 display: "flex",
                 flexDirection: "row",
@@ -19,6 +19,8 @@ const members = (props) => {
             }}>
                 <Button variant="text" href="/ApplyLeave" style={{ color: "#00896b", marginRight: "0px", float:"right" }} >Apply Leave</Button>
             </div>
+            </div>
+            
         </div>
     );
 };

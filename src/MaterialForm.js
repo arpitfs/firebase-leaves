@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import "./MaterialForm.css";
 import { useState, useEffect } from 'react';
 import { db } from "./firebase_config";
-import firebase from "firebase";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -37,22 +36,28 @@ function MaterialForm() {
     const [holidayTillInput, setHolidayTill] = useState();
     const [messageInput, setMessage] = useState();
     const [calculateVacation, setCalculateVaction] = useState();
+    const [nameInput, setNameInput] = useState();
 
     const submitHoliday = (e) => {
-        console.log(holidayFromInput)
+        console.log(nameInput)
         e.preventDefault();
 
-        // var parsedStartDay = parseDate(holidayFromInput);
-        // var parshedEndDay = parseDate(holidayTillInput);
+        var parsedStartDay = parseDate(holidayFromInput);
+        var parshedEndDay = parseDate(holidayTillInput);
+        console.log(parsedStartDay)
+        var localholidays = CalculateHolidays(parsedStartDay, parshedEndDay)
+        db.collection(nameInput).add({
+            holidayFrom: parsedStartDay,
+            holidayTill: parshedEndDay,
+            message: messageInput,
+            totalHolidays: localholidays
+        });
 
-        // holidays = CalculateHolidays(parsedStartDay, parshedEndDay)
-        // db.collection("todo").add({
-        //     holidayFrom: parsedStartDay,
-        //     holidayTill: parshedEndDay,
-        //     message: messageInput,
-        //     totalHolidays: holidays
-        // });
-
+        setHolidayFrom(null);
+        setHolidayTill(null);
+        setCalculateVaction(null);
+        setMessage("");
+        setNameInput(null);
     }
 
     function presetHolidays() {
@@ -100,7 +105,7 @@ function MaterialForm() {
         console.log("Form data", values);
         e.target.reset();
     };
-
+    
     return (
         <div className="materialForm">
             <h1>Vacation Tracker</h1>
@@ -112,14 +117,16 @@ function MaterialForm() {
             >
                 <InputLabel htmlFor="name-native-disabled">Name</InputLabel>
                 <NativeSelect
-                value="Name"
+                value={nameInput}
                 inputProps={{
                     name: 'name',
                     id: 'name-native-disabled',
                 }}
+                onChange={(e) => setNameInput(e.target.value)}
                 >
                 <option value="">Select Name</option>
-                <option value="olivier">Arpit Malik</option>
+                <option value="Arpit Malik">Arpit Malik</option>
+                <option value="Sumeet Verma">Sumeet Verma</option>
                 </NativeSelect>
                 <TextField
                     label="Vacation From"
@@ -131,6 +138,7 @@ function MaterialForm() {
                     style={{ marginBottom: "20px" }}
                     onChange={(e) => setHolidayFrom(e.target.value)}
                     inputRef={register({ required: true })}
+                    value={holidayFromInput}
                 />
                 {errors.vdate && <p>Required</p>}
 

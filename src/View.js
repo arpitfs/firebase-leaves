@@ -24,17 +24,18 @@ export default function DenseTable() {
 
   const [getData, setData] = useState([]);
 
-  function getFromDb() {
+  async function getFromDb() {
     console.log("Get Todos method");
-    db.collection("todo").onSnapshot(function (querySnapshot) {
+     db.collection("Arpit Malik").onSnapshot(function (querySnapshot) {
       setData(
         querySnapshot.docs.map((doc) => ({
-          name: doc.id,
-          vacationFrom: doc.data().VacationFrom,
-          vacationTill: doc.data().VacationTill,
-          totalDays: doc.data().TotalDays
+          holidayFrom: doc.data().holidayFrom,
+          holidayTill: doc.data().holidayTill,
+          TotalDays: doc.data().TotalDays
+          
         }))
       );
+      console.log("Inner");
     });
     console.log(getData);
   }
