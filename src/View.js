@@ -49,7 +49,8 @@ export default function DenseTable() {
   }
   
   const rows = [
-    createData(getData.name, getData.VacationFrom, getData.VacationTill, getData.TotalDays)
+    // createData(getData.name, getData.VacationFrom, getData.VacationTill, getData.TotalDays),
+    createData("Arpit Malik", "12/12/2020", "15/12/2020", 4)
   ];
   
 
@@ -78,9 +79,9 @@ export default function DenseTable() {
                 <TableCell component="th" scope="row">
                   {row.name}
                 </TableCell>
-                <TableCell align="right">{getData.vacationFrom}</TableCell>
-                <TableCell align="right">{getData.vacationTill}</TableCell>
-                <TableCell align="right">{getData.totalDays}</TableCell>
+                <TableCell align="right">12/12/2020</TableCell>
+                <TableCell align="right">15/12/2020</TableCell>
+                <TableCell align="right">4</TableCell>
                 <Button>X</Button>
               </TableRow>
              
