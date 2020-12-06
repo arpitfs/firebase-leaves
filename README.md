@@ -10,4 +10,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+### App Home Page
 
+
+![alt text](https://github.com/arpitfs/firebase-leaves/blob/master/src/screenshots/Home.png)
+
+### App Form Page
+
+
+![alt text](https://github.com/arpitfs/firebase-leaves/blob/master/src/screenshots/Form.png)
+
+### App View Page
+
+![alt text](https://github.com/arpitfs/firebase-leaves/blob/master/src/screenshots/View.png)
